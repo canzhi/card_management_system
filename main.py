@@ -7,7 +7,8 @@ print(" 1.添加名片")
 print(" 2.删除名片")
 print(" 3.修改名片")
 print(" 4.查询名片")
-print(" 5.退出系统")
+print(" 5.显示所有名片")
+print(" 6.退出系统")
 print("*" * 20)
 
 # 定义一个列表，用于存储名片
@@ -56,6 +57,10 @@ while True:
             else:
                 print("无此名片")
     elif num == 5:
+        for item in cards_list:
+            print("姓名\t\t\t\t年龄\t手机号")
+            print("%-12s\t%-2s\t%-11s\t" % (item["name"], item["age"], item["phone_number"]))
+    elif num == 6:
         break
     else:
         print("输入有误，请重新输入！！！")
