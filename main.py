@@ -49,15 +49,22 @@ while True:
 
     elif num == 4:
         name = input("请输入要查寻的名字：")
-        flag = False
+        # flag = False
+        # for item in cards_list:
+        #     if item.get("name") == name:
+        #         print("此用户名片存在")
+        #         print(item)
+        #         flag = True
+        #         break
+        # if not flag:
+        #     print("无此名片")
         for item in cards_list:
-            if item.get("name") == name:
-                print("此用户名片存在")
+            if item["name"] == name:
+                print("此用户的名片存在")
                 print(item)
-                flag = True
                 break
-        if not flag:
-            print("无此名片")
+        else:
+            print("无此用户的名片")
     elif num == 5:
         for item in cards_list:
             print("姓名\t\t\t\t年龄\t手机号")
