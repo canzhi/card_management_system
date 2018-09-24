@@ -1,0 +1,61 @@
+# -*- coding:utf-8 -*-
+# 提示信息
+print("*" * 20)
+print("   名片管理系统v0.0")
+print("*" * 20)
+print(" 1.添加名片")
+print(" 2.删除名片")
+print(" 3.修改名片")
+print(" 4.查询名片")
+print(" 5.退出系统")
+print("*" * 20)
+
+# 定义一个列表，用于存储名片
+cards_list = []
+
+# 循环执行
+while True:
+
+    # 获取用户的功能请求
+    num = int(input("请问您想干什么？"))
+
+    # 根据用户的请求，来对列表进行“增/删/改/查”
+    if num == 1:
+        name = input("请输入名字：")
+        age = input("请输入年龄：")
+        phone_number = input("请输入手机号：")
+        people = {"name": name, "age": age, "phone_number": phone_number}
+        cards_list.append(people)
+        print(cards_list)
+    elif num == 2:
+        name = input("请输入要删除的用户名称：")
+        for item in cards_list:
+            if item.get("name") == name:
+                cards_list.remove(item)
+                break
+
+    elif num == 3:
+        name = input("请输入要修改的用户的名称：")
+        age = input("请输入要修改成的用户的年龄：")
+        phone_number = input("请输入要修改成的用户的手机号：")
+
+        i = 0
+        while i <= len(cards_list) - 1:
+            if cards_list[i].get("name") == name:
+                cards_list[i]["age"] = age
+                cards_list[i]["phone_number"] = phone_number
+            i += 1
+
+    elif num == 4:
+        name = input("请输入要查寻的名字：")
+        for item in cards_list:
+            if item.get("name") == name:
+                print("此用户名片存在")
+                print(item)
+                break
+            else:
+                print("无此名片")
+    elif num == 5:
+        break
+    else:
+        print("输入有误，请重新输入！！！")
