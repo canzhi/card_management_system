@@ -5,6 +5,7 @@ cards_list = []
 
 
 def prt_menu():
+    "打印功能菜单"
     print("*" * 20)
     print("   名片管理系统v0.0")
     print("*" * 20)
@@ -18,16 +19,19 @@ def prt_menu():
 
 
 def add_new_card_info():
+    "添加新名片"
+    global cards_list
     name = input("请输入名字：")
     age = input("请输入年龄：")
     phone_number = input("请输入手机号：")
     people = {"name": name, "age": age, "phone_number": phone_number}
-    global cards_list
     cards_list.append(people)
     print(cards_list)
 
 
 def del_card_info():
+    "删除名片"
+    global cards_list
     name = input("请输入要删除的用户名称：")
     for item in cards_list:
         if item.get("name") == name:
@@ -36,6 +40,8 @@ def del_card_info():
 
 
 def modify_card_info():
+    "修改名片"
+    global cards_list
     name = input("请输入要修改的用户的名称：")
     age = input("请输入要修改成的用户的年龄：")
     phone_number = input("请输入要修改成的用户的手机号：")
@@ -49,6 +55,8 @@ def modify_card_info():
 
 
 def inquiry_card_info():
+    "查询名片"
+    global cards_list
     name = input("请输入要查寻的名字：")
     # flag = False
     # for item in cards_list:
@@ -69,6 +77,8 @@ def inquiry_card_info():
 
 
 def show_all_card_info():
+    "显示所有名片信息"
+    global cards_list
     for item in cards_list:
         print("姓名\t\t\t\t年龄\t手机号")
         print("%-12s\t%-2s\t%-11s\t" % (item["name"], item["age"], item["phone_number"]))
