@@ -22,6 +22,7 @@ def add_new_card_info():
     age = input("请输入年龄：")
     phone_number = input("请输入手机号：")
     people = {"name": name, "age": age, "phone_number": phone_number}
+    global cards_list
     cards_list.append(people)
     print(cards_list)
 
