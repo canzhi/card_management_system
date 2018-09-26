@@ -84,26 +84,31 @@ def show_all_card_info():
         print("%-12s\t%-2s\t%-11s\t" % (item["name"], item["age"], item["phone_number"]))
 
 
-# 提示信息
-prt_menu()
+def main():
+    # 提示信息
+    prt_menu()
 
-# 循环执行
-while True:
-    # 获取用户的功能请求
-    num = int(input("请问您想干什么？"))
+    # 循环执行
+    while True:
+        # 获取用户的功能请求
+        num = int(input("请问您想干什么？"))
 
-    # 根据用户的请求，来对列表进 行“增/删/改/查”
-    if num == 1:
-        add_new_card_info()
-    elif num == 2:
-        del_card_info()
-    elif num == 3:
-        modify_card_info()
-    elif num == 4:
-        inquiry_card_info()
-    elif num == 5:
-        show_all_card_info()
-    elif num == 6:
-        break
-    else:
-        print("输入有误，请重新输入！！！")
+        # 根据用户的请求，来对列表进 行“增/删/改/查”
+        if num == 1:
+            add_new_card_info()
+        elif num == 2:
+            del_card_info()
+        elif num == 3:
+            modify_card_info()
+        elif num == 4:
+            inquiry_card_info()
+        elif num == 5:
+            show_all_card_info()
+        elif num == 6:
+            break
+        else:
+            print("输入有误，请重新输入！！！")
+
+
+# 调用主main()函数
+main()
